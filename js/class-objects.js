@@ -130,3 +130,28 @@
 
 
 
+// class abc {
+//     firstName= "fasfaf"
+//     lastName= "fasfas"
+
+//     get Name() {
+//         console.log(this.firstName + " " + this.lastName);
+//     }
+
+//     set setName(name) {
+
+//         console.log("set" +name);
+//         this.name = name;
+//     }
+// }
+
+// const a = new abc();
+
+// a.setName = "Fasfsadf"
+
+// console.log(a.Name)
+
+// const b = new abc();
+
+// console.log(b.Name)
+
