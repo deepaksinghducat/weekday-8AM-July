@@ -32,8 +32,57 @@
 
 // Element create 
 
-
-
 // create one tag add some data in it and append to some tag 
+
+
+// Child nodes
+// const ul = document.querySelector('ul')
+
+
+// const li = document.querySelector('li');
+
+// console.log(ul);
+// console.log(li);
+
+
+// Parent Nodes
+
+// const ul = document.querySelector('ul');
+
+// console.log(ul);
+
+
+// const li = document.querySelector('ul')
+
+
+// alert
+// alert('fafasd');
+
+// Promt
+// const string = prompt('fsasfasfas')
+
+// confirm
+
+// const returnValue = confirm('fasfasfaf');
+
+
+// window.location.href = 'https://www.w3schools.com/cssref/sel_firstchild.asp';
+
+
+// const timer = setInterval(() =>{
+//     console.log('fasfdsafasfd');
+
+// },1000)
+
+
+
+// setTimeout(() => {
+
+//     console.log('time out');
+//     clearInterval(timer);
+// },5000);
+
+
+
 
 
