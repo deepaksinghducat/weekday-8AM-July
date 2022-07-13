@@ -155,5 +155,32 @@
 // console.log(array3);
 
 
+// Sort
+
+// let array = [10,50,20,90,70];
+
+// console.log(array.sort());
 
 
+// Reverse 
+
+// let array = [10,50,20,90,70];
+// console.log(array);
+// console.log(array.reverse());
+
+// Includes
+
+// let array = [10,50,20,90,70];
+
+// console.log(array.includes(1000));
+
+// ToString
+// let array = [10,50,20,90,70];
+// console.log(array);
+
+
+
+// 1. SET 
+// 2. Promise 
+// 3. Object
+// 4. String
