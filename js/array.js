@@ -181,6 +181,7 @@
 
 
 // 1. SET 
-// 2. Promise 
-// 3. Object
-// 4. String
+// 2. Map
+// 3. Promise 
+// 4. Object
+// 5. String
