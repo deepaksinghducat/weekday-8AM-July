@@ -127,9 +127,6 @@
 
 // 1. write a class which take two parameter Firstname , Secondname and one method return Full Name of any person
 
-
-
-
 // class abc {
 //     firstName= "fasfaf"
 //     lastName= "fasfas"
@@ -154,4 +151,12 @@
 // const b = new abc();
 
 // console.log(b.Name)
+
+// class FullName {
+//   static name() {
+//     console.log('fdasdasf');
+//   }  
+// }
+
+// FullName.name();
 
