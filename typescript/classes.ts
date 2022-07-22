@@ -139,7 +139,18 @@
 
 
 
+// Generics
 
+// function fun () : number  {
+//     console.log("fdsafsafsaf");
+//     return 10;
+// }
+
+// fun();
+
+import details5  from './exportImport';
+
+console.log(details5());
 
 
 

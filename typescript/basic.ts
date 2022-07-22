@@ -33,7 +33,7 @@
 
 
 
-// program to inter A to  Z characters (capital letters) in array ;
+// program to inter a to  z characters (capital letters) in array ;
 
 // let characters: string[] = [];
 

@@ -27,7 +27,7 @@ class Countries {
     getCountry = async (countryName) => {
         let response = await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
 
-        this.country = response.json();
+        this.country = await response.json();
     }
 
     render(countries) {

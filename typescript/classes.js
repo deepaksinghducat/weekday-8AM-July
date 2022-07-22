@@ -1,6 +1,8 @@
+"use strict";
 // class Employee {
 //     name: string;
 //     age: number;
+exports.__esModule = true;
 //     constructor(name: string,age: number) {
 //         this.name = name;
 //         this.age = age;
@@ -91,14 +93,19 @@
 //     }
 // }
 // static
-var Employee = /** @class */ (function () {
-    function Employee() {
-    }
-    Employee.details = function () {
-        return "Employee details";
-    };
-    Employee.fullName = "fsafasdf";
-    return Employee;
-}());
-console.log(Employee.fullName);
-console.log(Employee.details());
+// class Employee {
+//     static fullName : string = "fsafasdf"
+//     static details() : string {
+//         return "Employee details";
+//     }
+// }
+// console.log(Employee.fullName);
+// console.log(Employee.details());
+// Generics
+// function fun () : number  {
+//     console.log("fdsafsafsaf");
+//     return 10;
+// }
+// fun();
+var exportImport_1 = require("./exportImport");
+console.log((0, exportImport_1["default"])());

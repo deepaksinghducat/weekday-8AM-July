@@ -1,6 +1,6 @@
 // String representation
-// let str: string = 10;
-// console.log(str);
+var str = 10;
+console.log(str);
 // Number representation
 // let num: number = 10;
 // Boolean representation
@@ -37,17 +37,22 @@
 // }
 // console.log(fullname('fdsafsdaf','fsafsdaf'));
 // 153 1*1*1 + 5*5*5 + 3*3*3 
-var num = 153;
-var temp = num;
-var arm = 0;
-while (temp > 0) {
-    var rem = temp % 10;
-    arm = arm + rem * rem * rem;
-    temp = Math.floor(temp / 10);
-}
-if (arm === num) {
-    console.log('armstrong');
-}
-else {
-    console.log("not armstrong");
-}
+// let num: number = 153;
+// let temp: any = num;
+// let arm: number = 0;
+// while(temp > 0) {
+//     let rem: number = temp%10;
+//     arm = arm + rem*rem*rem;
+//     temp = Math.floor(temp/10);   
+// }
+// if(arm === num) {
+//     console.log('armstrong');
+// }else{
+//     console.log("not armstrong");
+// }
+// 12121212121212121212121212
+// 2
+// 1
+// 2
+// 1
+// HCF LCM 
