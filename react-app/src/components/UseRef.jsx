@@ -8,8 +8,9 @@ function UseRef() {
   const add = (event) => {
     event.preventDefault();
 
-    if(input.current.value == '') {
+    if(input.current.value === '') {
       // console.log("fasf");
+
       input.current.style.borderColor = 'red'
     }
   }

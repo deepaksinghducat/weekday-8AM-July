@@ -1,6 +1,7 @@
 
 export const TodoReducer = (state,action) => {
 
+    console.log(action);
     if(action.type === 'add') {
         return {
             todos : [

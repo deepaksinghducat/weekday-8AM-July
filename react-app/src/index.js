@@ -5,9 +5,21 @@ import App from './App';
 import UseEffect from './components/UseEffect';
 import UseReducer from './components/UseReducer';
 import UseRef from './components/UseRef';
+import ContextApi from './components/ContextApi';
+import {TodoContextProvider} from './store/TodoContent';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <TodoContext.Provider value={{
+//     name: "sfdafsafsafsafsafsadfsadafasdfsaf"
+//   }}>
+//     <ContextApi />
+//   </TodoContext.Provider>
+// );
+
 root.render(
-  <UseRef />
+  <TodoContextProvider>
+    <ContextApi />
+  </TodoContextProvider> 
 );
 
