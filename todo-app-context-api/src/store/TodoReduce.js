@@ -1,4 +1,4 @@
-// import {Cookies} from 'react-cookie';
+// import { Cookies } from 'react-cookie';
 
 // const cookies = new Cookies();
 
@@ -9,7 +9,7 @@
 export const TodoReducer = (state, action) => {
     if (action.type === "add") {
 
-        const todos = [...state.todos,action.data];
+        const todos = [...state.todos, action.data];
 
         // sessionStorage.setItem('todo', JSON.stringify(todos))
 
@@ -41,7 +41,3 @@ export const TodoReducer = (state, action) => {
 
     return state
 }
-
-// cookies 
-// localStorage
-// sessionStorage

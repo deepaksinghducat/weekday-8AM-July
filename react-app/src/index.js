@@ -7,6 +7,7 @@ import UseReducer from './components/UseReducer';
 import UseRef from './components/UseRef';
 import ContextApi from './components/ContextApi';
 import {TodoContextProvider} from './store/TodoContent';
+import ReactMemo from './optimization/ReactMemo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // root.render(
@@ -18,8 +19,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 // );
 
 root.render(
-  <TodoContextProvider>
-    <ContextApi />
-  </TodoContextProvider> 
+  // <TodoContextProvider>
+    <ReactMemo />
+  // </TodoContextProvider> 
 );
 
