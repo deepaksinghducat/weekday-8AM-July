@@ -3,7 +3,8 @@ import Button from './Button';
 
 function Parent(props) {
 
-    console.log("parent counter");
+  console.log("parent counter");
+  
   return (
     <div>
         {props.counter}
