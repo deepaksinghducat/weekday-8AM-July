@@ -1,6 +1,7 @@
 import { createStore } from 'redux';
 
 const TodoReducer = (state = { todos: ['fdsafasf','dafsadf'] },action) => {
+    console.log(state,action);
     if(action.type=== 'add') {
         return {
             todos: [
