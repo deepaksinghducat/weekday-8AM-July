@@ -1,7 +1,8 @@
-import { ADD_PRODUCT, LOAD_PRODUCT } from "../constants/ProductContants"
+import { ADD_PRODUCT, ERR_PRODUCT, LOAD_PRODUCT } from "../constants/ProductContants"
 
 const initialProduct = {
-	products: []
+	products: [],
+	error: ''
 }
 
 export const ProductReducer = (state = initialProduct, action) => {
@@ -12,12 +13,18 @@ export const ProductReducer = (state = initialProduct, action) => {
 				products: [...action.payload]
 			}
 
-		case ADD_PRODUCT: 
+		case ADD_PRODUCT:
 			return {
 				...state,
-				products: [...state.products,action.payload]
+				products: [...state.products, action.payload]
 			}
-		default : 
+		case ERR_PRODUCT:
+			return {
+				...state,
+				error: 'Something went wrong'
+			}
+
+		default:
 			return state
 	}
 }
