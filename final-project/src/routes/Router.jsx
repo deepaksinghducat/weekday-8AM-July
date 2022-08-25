@@ -14,6 +14,10 @@ import EditProduct from "../pages/accounts/products/EditProduct";
 import Order from "../pages/accounts/orders/Order";
 import OrderDetail from "../pages/accounts/orders/OrderDetail";
 import PageNotFound from "../pages/PageNotFound";
+import Role from "../pages/accounts/roles/Role";
+import EditRole from "../pages/accounts/roles/EditRole";
+import CreateRole from "../pages/accounts/roles/CreateRole";
+import Logout from "../pages/accounts/Logout";
 
 const Router = () => {
   return (
@@ -25,12 +29,17 @@ const Router = () => {
       <Route path="/accounts" element={<Account />}>
         <Route path="profile" element={<Profile />} />
         <Route path="users" element={<User />} />
-        <Route path="edit-user" element={<EditUser />} />
+        <Route path="user-create" element={<User />} />
+        <Route path="edit-user/:id" element={<EditUser />} />
+        <Route path="roles" element={<Role />} />
+        <Route path="create-role" element={<CreateRole />} />
+        <Route path="edit-role/:id" element={<EditRole />} />
         <Route path="products" element={<Product />} />
         <Route path="create-product" element={<CreateProduct />} />
         <Route path="edit-product/:id" element={<EditProduct />} />
         <Route path="orders" element={<Order />} />
         <Route path="order-detail/:id" element={<OrderDetail />} />
+        <Route path="logout" element={<Logout />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
