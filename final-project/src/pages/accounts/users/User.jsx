@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 const User = () => {
   return (
     <Fragment>
-      <h1 className="mb-2">User</h1>
+      <h1 className="mb-2">User
+      
+      <Link to='/accounts/user-create' className="btn btn-primary" style={{
+          float: 'right'
+        }}>Create User</Link>
+      </h1>
       <Table striped bordered hover>
         <thead>
           <tr>

@@ -5,7 +5,18 @@ import { Link } from "react-router-dom";
 const Product = () => {
   return (
     <Fragment>
-      <h1 className="mb-2">Products</h1>
+      <h1 className="mb-2">
+        Products
+        <Link
+          to="/accounts/create-product"
+          className="btn btn-primary"
+          style={{
+            float: "right",
+          }}
+        >
+          Create Product
+        </Link>
+      </h1>
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -19,7 +30,7 @@ const Product = () => {
             <td>1</td>
             <td>Mark</td>
             <td>
-              <Link to={`/accounts/edit-role/1`}>Edit</Link>
+              <Link to={`/accounts/edit-product/1`}>Edit</Link>
             </td>
           </tr>
           <tr>

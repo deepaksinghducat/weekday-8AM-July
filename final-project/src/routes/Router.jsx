@@ -18,6 +18,7 @@ import Role from "../pages/accounts/roles/Role";
 import EditRole from "../pages/accounts/roles/EditRole";
 import CreateRole from "../pages/accounts/roles/CreateRole";
 import Logout from "../pages/accounts/Logout";
+import CreateUser from "../pages/accounts/users/CreateUser";
 
 const Router = () => {
   return (
@@ -29,7 +30,7 @@ const Router = () => {
       <Route path="/accounts" element={<Account />}>
         <Route path="profile" element={<Profile />} />
         <Route path="users" element={<User />} />
-        <Route path="user-create" element={<User />} />
+        <Route path="user-create" element={<CreateUser />} />
         <Route path="edit-user/:id" element={<EditUser />} />
         <Route path="roles" element={<Role />} />
         <Route path="create-role" element={<CreateRole />} />

@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { Fragment } from "react";
 
 const Profile = () => {
   return (
-	<div>Profile</div>
-  )
-}
+    <Fragment>
+      <ul className="list-group">
+        <li className="list-group-item active" aria-current="true">
+          Profile
+        </li>
+        <li className="list-group-item">
+          Name :  Jhon Doe
+        </li>
+        <li className="list-group-item">
+          Email : jhon@example.com
+        </li>
+      </ul>
+    </Fragment>
+  );
+};
 
-export default Profile
+export default Profile;

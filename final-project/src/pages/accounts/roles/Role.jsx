@@ -5,7 +5,13 @@ import { Link } from "react-router-dom";
 const Role = () => {
   return (
     <Fragment>
-      <h1 className="mb-2">Roles</h1>
+      <h1 className="mb-2">
+        Roles
+
+        <Link to='/accounts/create-role' className="btn btn-primary" style={{
+          float: 'right'
+        }}>Create Role</Link>
+      </h1>
       <Table striped bordered hover>
         <thead>
           <tr>

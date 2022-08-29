@@ -19,7 +19,7 @@ const Order = () => {
             <td>1</td>
             <td>Mark</td>
             <td>
-              <Link to={`/accounts/edit-role/1`}>Edit</Link>
+              <Link to={`/accounts/order-detail/1`}>view</Link>
             </td>
           </tr>
           <tr>
