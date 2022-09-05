@@ -5,9 +5,11 @@ const initialRoleState = {
 }
 
 export const RoleReducer = (state = initialRoleState, action) => {
-
+	
 	switch (action.type) {
 		case LOAD_ROLE:
+
+			console.log(action);
 
 			return {
 				...state,

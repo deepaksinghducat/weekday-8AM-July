@@ -1,8 +1,17 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import Table from "react-bootstrap/Table";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { getRoles } from "../../../redux/actions/RoleAction";
 
 const Role = () => {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getRoles(['gfdsgdsg']));
+  },[])
+
   return (
     <Fragment>
       <h1 className="mb-2">

@@ -1,10 +1,15 @@
-import { all } from 'redux-saga/effects'
-import productWatcher from './ProductSaga';
+import { all, fork } from 'redux-saga/effects'
+import roleWatch from './RoleSaga';
+
+
+const rootSagas = [
+	fork(roleWatch)
+]
 
 
 function* rootSaga() {
 	yield all([
-		productWatcher()
+		...rootSagas
 	])
 }
 
