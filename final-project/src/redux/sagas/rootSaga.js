@@ -1,17 +1,7 @@
-import { all, fork } from 'redux-saga/effects'
-import roleWatch from './RoleSaga';
+import { all } from 'redux-saga/effects'
+import roleSaga from './RoleSaga';
 
 
-const rootSagas = [
-	fork(roleWatch)
-]
-
-
-function* rootSaga() {
-	yield all([
-		...rootSagas
-	])
+export default function* rootSaga() {
+	yield all([...roleSaga])
 }
-
-
-export default rootSaga;

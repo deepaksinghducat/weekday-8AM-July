@@ -1,4 +1,8 @@
-export const LOAD_ROLE = 'LOAD_ROLE';
-export const ADD_ROLE = 'ADD_ROLE';
-export const REMOVE_ROLE = 'REMOVE_ROLE';
-export const RELOAD_ROLE = 'RELOAD_ROLE';
+export const ADD_ROLE_START = 'ADD_ROLE_START';
+export const ADD_ROLE_SUCCESS = 'ADD_ROLE_SUCCESS';
+
+export const UPDATE_ROLE_START = 'UPDATE_ROLE_START';
+export const UPDATE_ROLE_SUCCESS = 'UPDATE_ROLE_SUCCESS';
+
+export const DELETE_ROLE_START = 'DELETE_ROLE_START';
+export const DELETE_ROLE_SUCCESS = 'DELETE_ROLE_SUCCESS';

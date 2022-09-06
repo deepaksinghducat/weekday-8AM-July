@@ -1,35 +1,54 @@
-import { ADD_ROLE, LOAD_ROLE, REMOVE_ROLE } from "../constants/RoleContants";
+import { ADD_ROLE_SUCCESS, DELETE_ROLE_SUCCESS, UPDATE_ROLE_SUCCESS } from "../constants/RoleContants";
 
 const initialRoleState = {
-	roles: [],
+	roles: localStorage.getItem('roles') ? JSON.parse(localStorage.getItem('roles')): [],
 }
 
+let roles = [];
+
 export const RoleReducer = (state = initialRoleState, action) => {
-	
+
 	switch (action.type) {
-		case LOAD_ROLE:
 
-			console.log(action);
+		case ADD_ROLE_SUCCESS:
 
-			return {
-				...state,
-				roles: [...action.payload]
-			}
+			roles = [...state.roles, action.payload];
 
-		case ADD_ROLE:
+			localStorage.setItem('roles', JSON.stringify(roles));
 
 			return {
 				...state,
-				roles: [...state.roles, action.payload]
+				roles: roles
 			}
 
-		case REMOVE_ROLE:
+		case UPDATE_ROLE_SUCCESS: 
+		   
+			roles = state.roles.map((role,index) => {
+				if(index === parseInt(action.payload.id)) {
+					return action.payload.role;
+				}
 
+				return role;
+			})
+
+			localStorage.setItem('roles', JSON.stringify(roles));
+
+			return {
+				...state,
+				roles: roles
+			}
+
+		case DELETE_ROLE_SUCCESS:
+			
 			state.roles.splice(action.payload, 1);
 
+			roles = state.roles;
+
+			localStorage.setItem('roles', JSON.stringify(roles));
+
 			return {
 				...state,
-				roles: [...state.roles]
+				roles: roles
 			}
 
 		default:

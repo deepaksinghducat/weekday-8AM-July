@@ -15,12 +15,15 @@ const reducers = combineReducers({
 	role: RoleReducer
 })
 
+const initialState = {}
+
 
 const sagaMiddleware = createSagaMiddleware()
 
 const store = configureStore({
 	reducer: reducers,
 	middleware: [sagaMiddleware],
+	initialState,
 	devTools: true
 })
 

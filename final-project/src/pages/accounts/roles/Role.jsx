@@ -1,25 +1,35 @@
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import Table from "react-bootstrap/Table";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { getRoles } from "../../../redux/actions/RoleAction";
+import { toast } from "react-toastify";
+import { deleteRoleStart } from "../../../redux/actions/RoleAction";
 
 const Role = () => {
+  const { roles } = useSelector((state) => state.role);
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getRoles(['gfdsgdsg']));
-  },[])
+  const deleteHandler = (index) => {
+    dispatch(deleteRoleStart(index));
+  
+    toast.error('Role Delete Successfully');
+  
+  };
 
   return (
     <Fragment>
       <h1 className="mb-2">
         Roles
-
-        <Link to='/accounts/create-role' className="btn btn-primary" style={{
-          float: 'right'
-        }}>Create Role</Link>
+        <Link
+          to="/accounts/create-role"
+          className="btn btn-primary"
+          style={{
+            float: "right",
+          }}
+        >
+          Create Role
+        </Link>
       </h1>
       <Table striped bordered hover>
         <thead>
@@ -30,16 +40,28 @@ const Role = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td><Link to={`/accounts/edit-role/1`}>Edit</Link></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-          </tr>
+          {roles.length > 0 &&
+            roles.map((role, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{role.name}</td>
+                <td>
+                  <Link
+                    to={`/accounts/edit-role/${index}`}
+                    className="btn btn-sm btn-outline-primary"
+                  >
+                    Edit
+                  </Link>
+                  <button
+                    type="button"
+                    className="mx-2 btn btn-sm btn-outline-danger"
+                    onClick={() => deleteHandler(index)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </Table>
     </Fragment>
