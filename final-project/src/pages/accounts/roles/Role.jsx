@@ -12,9 +12,8 @@ const Role = () => {
 
   const deleteHandler = (index) => {
     dispatch(deleteRoleStart(index));
-  
-    toast.error('Role Delete Successfully');
-  
+
+    toast.error("Role Delete Successfully");
   };
 
   return (
