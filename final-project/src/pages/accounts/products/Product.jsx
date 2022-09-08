@@ -1,8 +1,21 @@
 import { Fragment } from "react";
 import Table from "react-bootstrap/Table";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import { deleteProductStart } from "../../../redux/actions/ProductAction";
 
 const Product = () => {
+  const { products } = useSelector((state) => state.products);
+
+  const dispatch = useDispatch();
+
+  const deleteHandler = (index) => {
+    dispatch(deleteProductStart(index));
+
+    toast.error("Product Deleted Successfully");
+  };
+
   return (
     <Fragment>
       <h1 className="mb-2">
@@ -26,18 +39,28 @@ const Product = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>
-              <Link to={`/accounts/edit-product/1`}>Edit</Link>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-          </tr>
+          {products.length > 0 &&
+            products.map((product, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{product.name}</td>
+                <td>
+                  <Link
+                    to={`/accounts/edit-product/${index}`}
+                    className="btn btn-sm btn-outline-primary"
+                  >
+                    Edit
+                  </Link>
+                  <button
+                    type="button"
+                    className="mx-2 btn btn-sm btn-outline-danger"
+                    onClick={() => deleteHandler(index)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </Table>
     </Fragment>

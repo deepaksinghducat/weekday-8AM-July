@@ -1,36 +1,59 @@
-import { ADD_PRODUCT, LOAD_PRODUCT, REMOVE_PRODUCT } from "../constants/ProductContants";
+import { ADD_PRODUCT_SUCCESS, DELETE_PRODUCT_SUCCESS, UPDATE_PRODUCT_SUCCESS } from "../constants/ProductContants";
 
 const initialProductState = {
-	products: [],
+	products: localStorage.getItem('products') ? JSON.parse(localStorage.getItem('products')) : [],
 }
+
+let products = [];
 
 export const ProductReducer = (state = initialProductState, action) => {
 
 	switch (action.type) {
-		case LOAD_PRODUCT:
+		case ADD_PRODUCT_SUCCESS:
 
-		console.log(action);
+			products = [
+				...state.products,
+				action.payload
+			];
 
-			return {
-				...state,
-				products: [...action.payload]
-			}
-
-		case ADD_PRODUCT:
+			localStorage.setItem('products', JSON.stringify(products));
 
 			return {
 				...state,
-				products: [...state.products, action.payload]
+				products
 			}
 
-		case REMOVE_PRODUCT:
+		case UPDATE_PRODUCT_SUCCESS:
+
+			products = state.products.map((product, index) => {
+				if (index === parseInt(action.payload.id)) {
+
+					return action.payload.product;
+				}
+
+				return product;
+			})
+
+			localStorage.setItem('products', JSON.stringify(products));
+
+			return {
+				...state,
+				products
+			}
+
+		case DELETE_PRODUCT_SUCCESS:
 
 			state.products.splice(action.payload, 1);
 
+			products = state.products;
+
+			localStorage.setItem('products', JSON.stringify(products));
+
 			return {
 				...state,
-				products: [...state.products]
+				products
 			}
+
 
 		default:
 			return state;
