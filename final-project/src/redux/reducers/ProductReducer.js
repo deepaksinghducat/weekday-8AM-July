@@ -54,7 +54,6 @@ export const ProductReducer = (state = initialProductState, action) => {
 				products
 			}
 
-
 		default:
 			return state;
 	}

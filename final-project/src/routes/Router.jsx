@@ -19,6 +19,7 @@ import EditRole from "../pages/accounts/roles/EditRole";
 import CreateRole from "../pages/accounts/roles/CreateRole";
 import Logout from "../pages/accounts/Logout";
 import CreateUser from "../pages/accounts/users/CreateUser";
+import Cart from "../pages/Cart";
 
 const Router = () => {
   return (
@@ -26,6 +27,7 @@ const Router = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/cart" element={<Cart />} />
       <Route path="/login" element={<Login />} />
       <Route path="/accounts" element={<Account />}>
         <Route path="profile" element={<Profile />} />

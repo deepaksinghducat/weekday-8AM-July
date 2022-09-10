@@ -1,14 +1,11 @@
 import { useEffect } from "react";
 import { Row, Col } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import CardUi from "../components/ui/CardUi";
-import Products from "../dummyData/Products";
-import { getProducts } from "../redux/actions/ProductAction";
 
 const Home = () => {
-  const products = Products;
 
-  const dispatch = useDispatch();
+  const { products } = useSelector(state => state.products);
 
   useEffect(() => {
 

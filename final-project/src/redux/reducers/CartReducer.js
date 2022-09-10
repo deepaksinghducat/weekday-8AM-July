@@ -1,41 +1,41 @@
-import { ADD_CART, LOAD_CART, REMOVE_CART } from "../constants/CartContants";
+import { ADDTOCART_SUCCESS, REMOVETOCART_SUCCESS } from "../constants/CartContants";
+
+const previousCart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+
+console.log(previousCart);
 
 const initialCartState = {
-	cartItems: [],
-	subtotal: 0,
-	taxes: 0,
-	grandTotal: 0
+	cartItems: previousCart.length > 0 ? previousCart.cartItems : [],
+	subTotal: previousCart.length > 0 ? previousCart.subtotal : 0,
+	taxes: previousCart.length > 0 ? previousCart.taxes : 0,
+	grandTotal: previousCart.length > 0 ? previousCart.grandTotal : 0,
 }
+
+let cart = {};
 
 export const CartReducer = (state = initialCartState, action) => {
 
 	switch (action.type) {
-		case LOAD_CART:
+		case ADDTOCART_SUCCESS:
 
-			return {
+			cart =  {
 				...state,
 				cartItems: [...action.cartItems],
-				subtotal: action.subtotal,
+				subTotal: action.subTotal,
 				taxes: action.taxes,
 				grandTotal: action.grandTotal
 			}
 
-		case ADD_CART:
+			localStorage.setItem('cart', JSON.stringify(cart));
+
+			return cart;
+
+		case REMOVETOCART_SUCCESS:
 
 			return {
 				...state,
 				cartItems: [...action.cartItems],
-				subtotal: action.subtotal,
-				taxes: action.taxes,
-				grandTotal: action.grandTotal
-			}
-
-		case REMOVE_CART:
-
-			return {
-				...state,
-				cartItems: [...action.cartItems],
-				subtotal: action.subtotal,
+				subTotal: action.subtotal,
 				taxes: action.taxes,
 				grandTotal: action.grandTotal
 			}
@@ -43,5 +43,4 @@ export const CartReducer = (state = initialCartState, action) => {
 		default:
 			return state;
 	}
-
 }

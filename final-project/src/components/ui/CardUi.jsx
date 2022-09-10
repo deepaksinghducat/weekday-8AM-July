@@ -1,17 +1,34 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCartStart } from "../../redux/actions/CartAction";
+import { cartHelper } from "../../redux/helpers/CartHelper";
 
-const CardUi = () => {
+const CardUi = ({ data }) => {
+  const cart = useSelector((state) => state.cart);
+
+  const dispatch = useDispatch();
+
+  const addToCartHandler = () => {
+    const calculatedCart = cartHelper(cart, data);
+
+    dispatch(addToCartStart(calculatedCart));
+  };
+
   return (
     <Card>
-      <Card.Img variant="top" src="https://via.placeholder.com/150" />
+      <Card.Img variant="top" src={data.image_url} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title>{data.name}</Card.Title>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          <>{data.description}</>
         </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Card.Text>
+          <>Price: ${data.price}</>
+        </Card.Text>
+        <Button variant="primary" onClick={addToCartHandler}>
+          Add To Cart
+        </Button>
       </Card.Body>
     </Card>
   );
